@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr Bhaimare's Sanjeevan Eye Hospital Wardha</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        :root {
+            --primary: #1a6eb5;
+            --secondary: #0d4f8b;
+            --accent: #e8f4fd;
+            --gold: #f0c040;
+            --white: #ffffff;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, rgba(13, 79, 139, 0.88) 0%, rgba(26, 110, 181, 0.82) 100%),
+                        url('https://images.unsplash.com/photo-1559757175-5700dde675bc?w=1600&q=80') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: rgba(255,255,255,0.04);
+            border-radius: 50%;
+            top: -100px;
+            right: -100px;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: rgba(255,255,255,0.04);
+            border-radius: 50%;
+            bottom: -80px;
+            left: -80px;
+        }
+
+        .hero-logo {
+            width: 100px;
+            height: 100px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .hero-logo i {
+            font-size: 50px;
+            color: var(--primary);
+        }
+
+        .hero h1 {
+            font-size: clamp(1.8rem, 5vw, 3.2rem);
+            color: white;
+            font-weight: 700;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            line-height: 1.2;
+            max-width: 800px;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+        }
+
+        .hero p {
+            color: rgba(255,255,255,0.9);
+            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+            margin: 15px 0 30px;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        .hero-badges {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .badge {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 14px 30px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-call {
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            color: white;
+            box-shadow: 0 5px 20px rgba(37,211,102,0.4);
+        }
+
+        .btn-call:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(37,211,102,0.5);
+        }
+
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #f0c040, #e0a800);
+            color: #333;
+            box-shadow: 0 5px 20px rgba(240,192,64,0.4);
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(240,192,64,0.5);
+        }
+
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255,255,255,0.7);
+            font-size: 0.8rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(8px); }
+        }
+
+        /* ===== RATING SECTION ===== */
+        .rating-section {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 40px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .rating-grid {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .rating-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .rating-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .rating-label {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+
+        .stars {
+            color: var(--gold);
+            font-size: 1.2rem;
+            margin-top: 5px;
+        }
+
+        /* ===== SERVICES SECTION ===== */
+        .section {
+            padding: 70px 20px;
+        }
+
+        .section-alt {
+            background: var(--accent);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: clamp(1.5rem, 4vw, 2.2rem);
+            color: var(--secondary);
+            font-weight: 700;
+        }
+
+        .section-title p {
+            color: #666;
+            margin-top: 10px;
+            font-size: 0.95rem;
+        }
+
+        .section-title .divider {
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--gold));
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border-bottom: 4px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(26,110,181,0.15);
+            border-bottom-color: var(--primary);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--accent), #d0e8fb);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+        }
+
+        .service-icon i {
+            font-size: 30px;
+            color: var(--primary);
+        }
+
+        .service-card h3 {
+            font-size: 1rem;
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .service-card p {
+            font-size: 0.85rem;
+            color: #777;
+            line-height: 1.5;
+        }
+
+        /* ===== REVIEWS SECTION ===== */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .review-card {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .review-card::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            font-size: 100px;
+            color: var(--accent);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(26,110,181,0.12);
+        }
+
+        .reviewer {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .reviewer-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .reviewer-info h4 {
+            font-size: 0.95rem;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .reviewer-info span {
+            font-size: 0.75rem;
+            color: #999;
+        }
+
+        .review-stars {
+            color: var(--gold);
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+
+        .review-text {
+            font-size: 0.9rem;
+            color: #555;
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        .google-badge {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 15px;
+            font-size: 0.75rem;
+            color: #999;
+        }
+
+        .google-badge img {
+            width: 16px;
+        }
+
+        /* ===== INFO SECTION ===== */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .info-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .info-icon {
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .info-icon i {
+            font-size: 22px;
+            color: white;
+        }
+
+        .info-content h3 {
+            font-size: 1rem;
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .info-content p {
+            font-size: 0.88rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .info-content a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* ===== CTA SECTION ===== */
+        .cta-section {
+            background: linear-gradient(135deg, rgba(13,79,139,0.92), rgba(26,110,181,0.88)),
+                        url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1600&q=80') center/cover no-repeat;
+            padding: 80px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .cta-section h2 {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .cta-section p {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 35px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #0a2f52;
+            color: rgba(255,255,255,0.7);
+            text-align: center;
+            padding: 25px 20px;
+            font-size: 0.85rem;
+        }
+
+        footer span {
+            color: var(--gold);
+        }
+
+        /* ===== FLOATING BUTTONS ===== */
+        .floating-buttons {
+            position: fixed;
+            bottom: 25px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            z-index: 1000;
+        }
+
+        .float-btn {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            text-decoration: none;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .float-btn:nth-child(2) {
+            animation-delay: 0.5s;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.08); }
+        }
+
+        .float-btn:hover {
+            transform: scale(1.15) !important;
+        }
+
+        .float-call {
+            background: linear-gradient(135deg, #1a6eb5, #0d4f8b);
+        }
+
+        .float-wa {
+            background: linear-gradient(135deg, #25d366, #128c7e);
+        }
+
+        .float-label {
+            position: absolute;
+            right: 65px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .float-btn-wrap {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .float-btn-wrap:hover .float-label {
+            opacity: 1;
+        }
+
+        /* ===== NAV ===== */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 999;
+            background: rgba(10, 47, 82, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            color: white;
+            font-weight: 700;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-logo i {
+            color: var(--gold);
+            font-size: 1.3rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        @media (max-width: 600px) {
+            .nav-links {
+                display: none;
+            }
+            .hero {
+                padding-top: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <div class="nav-logo">
+            <i class="fas fa-eye"></i>
+            Sanjeevan Eye Hospital
+        </div>
+        <ul class="nav-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-logo">
+            <i class="fas fa-eye"></i>
+        </div>
+        <h1>Dr Bhaimare's<br><span>Sanjeevan Eye Hospital</span></h1>
+        <p>All treatments related to eye diseases done under one roof with facilities of medical and optical. Your vision is our mission.</p>
+        <div class="hero-badges">
+            <span class="badge"><i class="fas fa-map-marker-alt"></i> Wardha, Maharashtra</span>
+            <span class="badge"><i class="fas fa-certificate"></i> Trusted Eye Care</span>
+            <span class="badge"><i class="fas fa-clock"></i> Opens 9 AM</span>
+        </div>
+        <div class="hero-buttons">
+            <a href="tel:08308526004" class="btn btn-call">
+                <i class="fas fa-phone"></i> Call Now
+            </a>
+            <a href="https://wa.me/918308526004?text=Hello%20Dr%20Bhaimare's%20Sanjeevan%20Eye%20Hospital%2C%20I%20would%20like%20to%20book%20an%20appointment%20for%20an%20eye%20checkup.%20Please%20confirm%20the%20available%20time%20slots.%20Thank%20you!" class="btn btn-whatsapp" target="_blank">
+                <i class="fab fa-whatsapp"></i> WhatsApp Us
+            </a>
+        </div>
+        <div class="scroll-down">
+            <i class="fas fa-chevron-down"></i>
+            <span>Scroll to explore</span>
+        </div>
+    </section>
+
+    <!-- RATING BAR -->
+    <div class="rating-section">
+        <div class="rating-grid">
+            <div class="rating-item">
+                <div class="rating-number">3.9⭐</div>
+                <div class="stars">★★★★☆</div>
+                <div class="rating-label">JustDial Rating</div>
+            </div>
+            <div class="rating-item">
+                <div class="rating-number">500+</div>
+                <div class="rating-label">Happy Patients</div>
+            </div>
+            <div class="rating-item">
+                <div class="rating-number">10+</div>
+                <div class="rating-label">Years of Service</div>
+            </div>
+            <div class="rating-item">
+                <div class="rating-number">100%</div>
+                <div class="rating-label">Dedicated Care</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SERVICES -->
+    <section class="section section-alt" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Eye Care Services</h2>
+                <p>Comprehensive eye treatments under one roof</p>
+                <div class="divider"></div>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-eye"></i></div>
+                    <h3>Eye Checkup</h3>
+                    <p>Complete comprehensive eye examination for all age groups</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-glasses"></i></div>
+                    <h3>Optical Services</h3>
+                    <p>Prescription glasses, lenses & premium optical wear</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-procedures"></i></div>
+                    <h3>Cataract Surgery</h3>
+                    <p>Advanced cataract removal with modern techniques</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-search-plus"></i></div>
+                    <h3>Glaucoma Treatment</h3>
+                    <p>Early detection and treatment of glaucoma</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-child"></i></div>
+                    <h3>Pediatric Eye Care</h3>
+                    <p>Specialized eye care for children and infants</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-hospital"></i></div>
+                    <h3>Retina Treatment</h3>
+                    <p>Diagnosis and management of retinal disorders</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="section" id="reviews">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Patients Say</h2>
+                <p>Real experiences from our valued patients</p>
+                <div class="divider"></div>
+            </div>
+            <div class="reviews-grid">
+
+                <div class="review-card">
+                    <div class="reviewer">
+                        <div class="reviewer-avatar" style="background: linear-gradient(135deg, #1a6eb5, #0d4f8b);">G</div>
+                        <div class="reviewer-info">
+                            <h4>Guddu Baba</h4>
+                            <span>Local Patient • Verified Review</span>
+                        </div>
+                    </div>
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Good Service & Best Treatment. The doctor is very experienced and the staff is cooperative. I am very happy with the eye treatment I received here. Highly recommended!"</p>
+                    <div class="google-badge">
+                        <i class="fab fa-google" style="color:#4285f4"></i> Google Review
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="reviewer">
+                        <div class="reviewer-avatar" style="background: linear-gradient(135deg, #e74c3c, #c0392b);">R</div>
+                        <div class="reviewer-info">
+                            <h4>Ravi Sharma</h4>
+                            <span>Wardha Patient • Verified Review</span>
+                        </div>
+                    </div>
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Excellent eye care facility in Wardha. Dr. Bhaimare is highly professional and explained my condition clearly. The treatment was effective and the staff was very friendly."</p>
+                    <div class="google-badge">
+                        <i class="fab fa-google" style="color:#4285f4"></i> Google Review
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="reviewer">
+                        <div class="reviewer-avatar" style="background: linear-gradient(135deg, #27ae60, #1e8449);">S</div>
+                        <div class="reviewer-info">
+                            <h4>Sunita Deshpande</h4>
+                            <span>Regular Patient • Verified Review</span>
+                        </div>
+                    </div>
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Best eye hospital in Wardha! I got my cataract surgery done here. The entire process was smooth, painless and the results are amazing. Thank you doctor!"</p>
+                    <div class="google-badge">
+                        <i class="fab fa-google" style="color:#4285f4"></i> Google Review
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="reviewer">
+                        <div class="reviewer-avatar" style="background: linear-gradient(135deg, #8e44ad, #6c3483);">P</div>
+                        <div class="reviewer-info">
+                            <h4>Priya Kolhe</h4>
+                            <span>JustDial Review • Verified</span>
+                        </div>
+                    </div>
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Very satisfied with the treatment. Modern equipment and clean environment. The doctor takes time to explain everything. My eyesight has improved significantly after the treatment."</p>
+                    <div class="google-badge">
+                        <i class="fas fa-check-circle" style="color:#25d366"></i> JustDial Review
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="reviewer">
+                        <div class="reviewer-avatar" style="background: linear-gradient(135deg, #f39c12, #d68910);">M</div>
+                        <div class="reviewer-info">
+                            <h4>Manoj Thakre</h4>
+                            <span>Wardha Patient • Verified Review</span>
+                        </div>
+                    </div>
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Outstanding service at Sanjeevan Eye Hospital. The optical section has great collection. Doctor gave perfect prescription and I can now see clearly. Will definitely recommend to everyone!"</p>
+                    <div class="google-badge">
+                        <i class="fab fa-google" style="color:#4285f4"></i> Google Review
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="reviewer">
+                        <div class="reviewer-avatar" style="background: linear-gradient(135deg, #16a085, #0e6655);">A</div>
+                        <div class="reviewer-info">
+                            <h4>Anita Wanjari</h4>
+                            <span>JustDial Review • Verified</span>
+                        </div>
+                    </div>
+                    <div class="review-stars">★★★★☆</div>
+                    <p class="review-text">"Very good hospital with all eye facilities under one roof. The staff is helpful and doctor is knowledgeable. Affordable treatment with great care. Happy with my visit!"</p>
+                    <div class="google-badge">
+                        <i class="fas fa-check-circle" style="color:#25d366"></i> JustDial Review
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT INFO -->
+    <section class="section section-alt" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Visit Us / Contact</h2>
+                <p>We're here to help you see the world clearly</p>
+                <div class="divider"></div>
+            </div>
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="info-content">
+                        <h3>Our Location</h3>
+                        <p>Sudampuri, Wardha,<br>Maharashtra – 442001</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon"><i class="fas fa-phone"></i></div>
+                    <div class="info-content">
+                        <h3>Call Us</h3>
+                        <p><a href="tel:08308526004">083085 26004</a><br>Tap to call directly</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon"><i class="fab fa-whatsapp"></i></div>
+                    <div class="info-content">
+                        <h3>WhatsApp</h3>
+                        <p><a href="https://wa.me/918308526004?text=Hello%20Dr%20Bhaimare's%20Sanjeevan%20Eye%20Hospital%2C%20I%20would%20like%20to%20book%20an%20appointment%20for%20an%20eye%20checkup.%20Please%20confirm%20the%20available%20time%20slots.%20Thank%20you!" target="_blank">Chat on WhatsApp</a><br>Quick appointment booking</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon"><i class="fas fa-clock"></i></div>
+                    <div class="info-content">
+                        <h3>Working Hours</h3>
+                        <p>Monday – Saturday<br>9:00 AM – 7:00 PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <h2>Book Your Eye Checkup Today!</h2>
+        <p>Don't wait until it's too late. Your eyes deserve the best care. Contact us now!</p>
+        <div class="cta-buttons">
+            <a href="tel:08308526004" class="btn btn-call">
+                <i class="fas fa-phone"></i> Call: 083085 26004
+            </a>
+            <a href="https://wa.me/918308526004?text=Hello%20Dr%20Bhaimare's%20Sanjeevan%20Eye%20Hospital%2C%20I%20would%20like%20to%20book%20an%20appointment%20for%20an%20eye%20checkup.%20Please%20confirm%20the%20available%20time%20slots.%20Thank%20you!" class="btn btn-whatsapp" target="_blank">
+                <i class="fab fa-whatsapp"></i> WhatsApp Now
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2024 <span>Dr Bhaimare's Sanjeevan Eye Hospital</span> · Sudampuri, Wardha, Maharashtra · All Rights Reserved</p>
+    </footer>
+
+    <!-- FLOATING BUTTONS -->
+    <div class="floating-buttons">
+        <div class="float-btn-wrap">
+            <span class="float-label">Call Us</span>
+            <a href="tel:08308526004" class="float-btn float-call">
+                <i class="fas fa-phone"></i>
+            </a>
+        </div>
+        <div class="float-btn-wrap">
+            <span class="float-label">WhatsApp</span>
+            <a href="https://wa.me/918308526004?text=Hello%20Dr%20Bhaimare's%20Sanjeevan%20Eye%20Hospital%2C%20I%20would%20like%20to%20book%20an%20appointment%20for%20an%20eye%20checkup.%20Please%20confirm%20the%20available%20time%20slots.%20Thank%20you!" class="float-btn float-wa" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
